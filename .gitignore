@@ -5,7 +5,10 @@
 /public/storage
 /storage/*.key
 /vendor
+/zip
 .env
+*.zip
+*.rar
 .env.backup
 .env.production
 .phpunit.result.cache
