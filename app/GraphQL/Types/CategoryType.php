@@ -32,11 +32,11 @@ class CategoryType extends GraphQLType
             ],
             'created_at' => [
                 'type' => Type::string(),
-                'description' => 'create date of the task',
+                'description' => 'The date and time the category was created',
             ],
             'updated_at' => [
                 'type' => Type::string(),
-                'description' => 'create date of the task',
+                'description' => 'The date and time the category was last updated',
             ],
             'tasks' => [
                 'type' => Type::listOf(GraphQL::type('Task')),

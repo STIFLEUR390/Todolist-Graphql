@@ -36,7 +36,11 @@ class CreateTaskMutation extends Mutation
             ],
             'priority' => [
                 'name' => 'priority',
-                'type' => Type::int(),
+                'type' => GraphQL::type('TaskPriority'),
+            ],
+            'reminder_date' => [
+                'name' => 'reminder_date',
+                'type' => Type::string(),
             ],
             'user_id' => [
                 'name' => 'user_id',
@@ -65,6 +69,7 @@ class CreateTaskMutation extends Mutation
             'title' => $args['title'],
             'description' => $args['description'] ?? null,
             'due_date' => $args['due_date'] ?? null,
+            'reminder_date' => $args['reminder_date'] ?? null,
             'priority' => $args['priority'] ?? 0,
         ]);
 

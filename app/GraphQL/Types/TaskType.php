@@ -42,13 +42,17 @@ class TaskType extends GraphQLType
                 'type' => Type::boolean(),
                 'description' => 'Whether the task is completed or not',
             ],
+            'reminder_date' => [
+                'type' => Type::string(),
+                'description' => 'The reminder date of the task',
+            ],
             'created_at' => [
                 'type' => Type::string(),
-                'description' => 'create date of the task',
+                'description' => 'The date and time the task was created',
             ],
             'updated_at' => [
                 'type' => Type::string(),
-                'description' => 'create date of the task',
+                'description' => 'The date and time the task was last updated',
             ],
             'category' => [
                 'type' => GraphQL::type('Category'),

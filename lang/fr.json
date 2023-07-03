@@ -33,5 +33,20 @@
     "Verify Email Address": "Vérifier l'adresse e-mail",
     "Whoops!": "Oups !",
     "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte.",
-    "Unsupported comparison operator.": "Opérateur de comparaison non pris en charge."
+    "Unsupported comparison operator.": "Opérateur de comparaison non pris en charge.",
+    "Reminder": "Rappel",
+    "task to do in the todolist app": "tâche à effectuer dans l'application todolist",
+    "Hello": "Bonjour",
+    "We remind you that a task is planned in your ToDo List application. Here are the details of the task": "Nous vous rappelons qu'une tâche est prévue dans votre application ToDo List. Voici les détails de la tâche",
+    "Task title": "Titre de la tâche",
+    "Task date": "Date de la tâche",
+    "Task time": "Heure de la tâche",
+    "Task description": "Description de la tâche",
+    "You have": "Il vous reste",
+    "left to complete this task. We encourage you to complete it on time.": "pour réaliser cette tâche. Nous vous encourageons à la terminer dans les délais impartis.",
+    "If you have any questions or concerns, please do not hesitate to contact us.": "Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter.",
+    "Cordially": "Cordialement",
+    "Task Reminder": "Rappel de tâche",
+    "View Task": "Voir la tâche",
+    "": ""
 }

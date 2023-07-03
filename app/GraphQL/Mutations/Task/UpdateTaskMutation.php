@@ -71,7 +71,9 @@ class UpdateTaskMutation extends Mutation
         if(!empty($args['description'])) { $task->description = $args['description']; }
         if(!empty($args['due_date'])) { $task->due_date = $args['due_date']; }
         if(!empty($args['priority'])) { $task->priority = $args['priority']; }
-
+        if (isset($args['reminder_date'])) {
+            $task->reminder_date = $args['reminder_date'];
+        }
         if(!empty($args['user_id'])) {
             $user = User::findOrFail($args['user_id']);
             $task->user_id = $args['user_id'];

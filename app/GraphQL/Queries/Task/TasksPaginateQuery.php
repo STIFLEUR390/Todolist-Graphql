@@ -47,6 +47,12 @@ class TasksPaginateQuery extends Query
                 'name' => 'sortType',
                 'type' => Type::string(),
             ],
+            'filter' => [
+                'name' => 'filter',
+                'type' => GraphQL::type('TaskFilter'),
+                'description' => 'Filter for tasks',
+                'defaultValue' => 'all',
+            ],
         ];
     }
 
@@ -77,6 +83,17 @@ class TasksPaginateQuery extends Query
         $query = Task::with(['user', 'category'])->select($attributes);
         if (!empty($search)) {
             $query = $this->globalSearch($query, Task::class, rawurldecode($search), 'LIKE');
+        }
+
+        switch ($args['filter']) {
+            case 'completed':
+                $query->where('completed', true);
+                break;
+            case 'incomplete':
+                $query->where('completed', false);
+                break;
+            default:
+                break;
         }
 
         if (!empty($sortBy) && !empty($sortType) && $sortType != 'null') {

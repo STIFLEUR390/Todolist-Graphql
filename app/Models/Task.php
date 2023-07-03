@@ -10,7 +10,7 @@ class Task extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'description', 'due_date', 'priority', 'completed', 'user_id'
+        'title', 'description', 'due_date', 'priority', 'completed', 'user_id', 'category_id', 'reminder_date'
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo

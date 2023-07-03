@@ -98,6 +98,7 @@ return [
             'types' => [
                 // ExampleType::class,
                 \App\GraphQL\Enums\TaskPriorityEnum::class,
+                \App\GraphQL\Enums\TaskFilterEnumType::class,
 //                "Task" => \App\GraphQL\Types\TaskType::class,
 //                "Category" => \App\GraphQL\Types\CategoryType::class,
             ],
