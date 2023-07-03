@@ -18,11 +18,12 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $priority = [1, 2, 3];
         return [
             'title' => fake()->sentence(5),
             'description' => fake()->text(),
             'due_date' => fake()->dateTimeBetween('+10 days', '+1 months'),
-            'priority' => fake()->boolean(50),
+            'priority' => rand(0, count($priority) -1),
             'completed' => fake()->boolean(50),
             'user_id' => User::all()->random(),
             'category_id' => Category::all()->random(),

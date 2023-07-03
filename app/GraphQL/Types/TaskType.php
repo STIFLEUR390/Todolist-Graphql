@@ -4,6 +4,7 @@ namespace App\GraphQL\Types;
 
 use App\Models\Task;
 use GraphQL\Type\Definition\Type;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 class TaskType extends GraphQLType
 {
@@ -22,7 +23,7 @@ class TaskType extends GraphQLType
                 'description' => 'The ID of the task',
             ],
             'title' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => 'The title of the task',
             ],
             'description' => [
@@ -34,13 +35,25 @@ class TaskType extends GraphQLType
                 'description' => 'The due date of the task',
             ],
             'priority' => [
-                'type' => Type::int(),
+                'type' => GraphQL::type('TaskPriority'),
                 'description' => 'The priority of the task',
             ],
             'completed' => [
                 'type' => Type::boolean(),
                 'description' => 'Whether the task is completed or not',
             ],
+            'created_at' => [
+                'type' => Type::string(),
+                'description' => 'create date of the task',
+            ],
+            'updated_at' => [
+                'type' => Type::string(),
+                'description' => 'create date of the task',
+            ],
+            'category' => [
+                'type' => GraphQL::type('Category'),
+                'description' => 'The category of the quest'
+            ]
         ];
     }
 }

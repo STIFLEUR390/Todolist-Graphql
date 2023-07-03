@@ -75,22 +75,31 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // ExampleQuery::class,
-                'task' => \App\GraphQL\Queries\TaskQuery::class,
-                'tasks' => \App\GraphQL\Queries\TasksQuery::class,
+                // Task
+                'task' => \App\GraphQL\Queries\Task\TaskQuery::class,
+                'tasks' => \App\GraphQL\Queries\Task\TasksQuery::class,
+                'tasksPaginate' => \App\GraphQL\Queries\Task\TasksPaginateQuery::class,
+                // Category
+                'category' => \App\GraphQL\Queries\Category\CategoryQuery::class,
+                'categories' => \App\GraphQL\Queries\Category\CategoriesQuery::class,
+                'categoriesPaginate' =>  \App\GraphQL\Queries\Category\CategoriesPaginateQuery::class,
             ],
             'mutation' => [
-                // ExampleMutation::class,
-                'createTask' => \App\GraphQL\Mutations\CreateTaskMutation::class,
-                // update book
-                'updateTask' => \App\GraphQL\Mutations\UpdateTaskMutation::class,
-                // delete a book
-                'deleteBook' => \App\GraphQL\Mutations\DeleteTaskMutation::class,
+                // Task
+                'createTask' => \App\GraphQL\Mutations\Task\CreateTaskMutation::class,
+                'updateTask' => \App\GraphQL\Mutations\Task\UpdateTaskMutation::class,
+                'deleteBook' => \App\GraphQL\Mutations\Task\DeleteTaskMutation::class,
+                // Category
+                'createCategory' => \App\GraphQL\Mutations\Category\CreateCategoryMutation::class,
+                'updateCategory' => \App\GraphQL\Mutations\Category\UpdateCategoryMutation::class,
+                'deleteCategory' => \App\GraphQL\Mutations\Category\DeleteCategoryMutation::class,
             ],
             // The types only available in this schema
             'types' => [
                 // ExampleType::class,
-                \App\GraphQL\Types\TaskType::class,
+                \App\GraphQL\Enums\TaskPriorityEnum::class,
+//                "Task" => \App\GraphQL\Types\TaskType::class,
+//                "Category" => \App\GraphQL\Types\CategoryType::class,
             ],
 
             // Laravel HTTP middleware
@@ -118,6 +127,7 @@ return [
         // ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
         "Task" => \App\GraphQL\Types\TaskType::class,
+        "Category" => \App\GraphQL\Types\CategoryType::class,
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.

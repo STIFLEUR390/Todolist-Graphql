@@ -1,24 +1,24 @@
 <?php
 
-namespace App\GraphQL\Queries;
+namespace App\GraphQL\Queries\Category;
 
-use App\Models\Task;
+use App\Models\Category;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
-class TasksQuery extends Query
+class CategoriesQuery extends Query
 {
     protected $attributes = [
-        'name' => 'tasks',
+        'name' => 'categories',
     ];
 
     public function type(): Type
     {
-        return Type::listOf(GraphQL::type('Task'));
+        return Type::listOf(GraphQL::type('Category'));
     }
 
     public function resolve($root, $args)
     {
-        return Task::all();
+        return Category::all();
     }
 }

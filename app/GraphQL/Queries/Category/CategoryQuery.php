@@ -1,20 +1,20 @@
 <?php
 
-namespace App\GraphQL\Queries;
+namespace App\GraphQL\Queries\Category;
 
-use App\Models\Task;
+use App\Models\Category;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
-class TaskQuery extends Query
+class CategoryQuery extends Query
 {
     protected $attributes = [
-        'name' => 'task',
+        'name' => 'category',
     ];
 
     public function type(): Type
     {
-        return GraphQL::type('Task');
+        return GraphQL::type('Category');
     }
 
     public function args(): array
@@ -24,12 +24,12 @@ class TaskQuery extends Query
                 'name' => 'id',
                 'type' => Type::int(),
                 'rules' => ['required']
-            ],
+            ]
         ];
     }
 
     public function resolve($root, $args)
     {
-        return Task::findOrFail($args['id']);
+        return Category::findOrFail($args['id']);
     }
 }

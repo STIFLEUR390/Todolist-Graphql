@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->dateTime('due_date')->nullable();
-            $table->integer('priority')->default(0);
+            $table->unsignedTinyInteger('priority')->default(1);
             $table->boolean('completed')->default(false);
             $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('category_id')->nullable()->constrained('categories')->cascadeOnUpdate()->cascadeOnDelete();
