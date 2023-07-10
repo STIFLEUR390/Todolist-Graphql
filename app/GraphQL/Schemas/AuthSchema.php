@@ -20,6 +20,7 @@ class AuthSchema implements ConfigConvertible
                 "loginUser" => \App\GraphQL\Mutations\Auth\LoginUserMutation::class,
                 "resetUserPassword" => \App\GraphQL\Mutations\Auth\ResetUserPasswordMutation::class,
                 "logoutMutation" => \App\GraphQL\Mutations\Auth\LogoutMutation::class,
+                "passwordResetLink" => \App\GraphQL\Mutations\Auth\PasswordResetLinkMutation::class
             ],
 
             'types' => [

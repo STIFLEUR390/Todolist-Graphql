@@ -4,6 +4,7 @@ namespace App\GraphQL\Mutations\Auth;
 
 use App\Models\User;
 use GraphQL\Type\Definition\Type;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -54,6 +55,7 @@ class RegisterUserMutation extends Mutation
         ]);
 
         Auth::login($user);
+        event(new Registered($user));
 
         return [
             'token' => $user->createToken("API TOKEN")->plainTextToken,

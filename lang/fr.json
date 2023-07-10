@@ -51,5 +51,8 @@
     "Invalid credentials": "Informations d'identification invalides",
     "Password reset successfully": "Mot de passe réinitialisé avec succès",
     "The provided credentials do not match our records.": "Les informations d'identification fournies ne correspondent pas à nos enregistrements.",
+    "Invalid token": "Jeton invalide",
+    "Email verified successfully": "Email vérifié avec succès",
+    "User not found": "Utilisateur non trouvé",
     "": ""
 }

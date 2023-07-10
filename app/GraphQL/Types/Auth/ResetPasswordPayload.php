@@ -9,9 +9,8 @@ use Rebing\GraphQL\Support\Type as GraphQLType;
 class ResetPasswordPayload extends GraphQLType
 {
     protected $attributes = [
-        'name'          => 'User',
+        'name'          => 'ResetPasswordPayload',
         'description'   => 'A user',
-        'model'         => User::class,
     ];
 
     public function fields(): array
