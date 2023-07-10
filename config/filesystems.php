@@ -36,6 +36,16 @@ return [
             'throw' => false,
         ],
 
+        'public_uploads' => [
+            'driver' => 'local',
+            'root' => public_path(),
+        ],
+
+        'zip' => [
+            'driver' => 'local',
+            'root' => base_path("zip"),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

@@ -48,5 +48,8 @@
     "Cordially": "Cordialement",
     "Task Reminder": "Rappel de tâche",
     "View Task": "Voir la tâche",
+    "Invalid credentials": "Informations d'identification invalides",
+    "Password reset successfully": "Mot de passe réinitialisé avec succès",
+    "The provided credentials do not match our records.": "Les informations d'identification fournies ne correspondent pas à nos enregistrements.",
     "": ""
 }

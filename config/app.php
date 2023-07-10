@@ -163,6 +163,8 @@ return [
          * Package Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Rebing\GraphQL\GraphQLServiceProvider::class,
+        Spatie\JsonApiPaginate\JsonApiPaginateServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -188,5 +190,14 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    'graphql' => [
+        'prefix' => 'graphql',
+        'routes' => '{graphql_schema?}',
+        'controllers' => Rebing\GraphQL\GraphQLController::class . '@query',
+        'middleware' => [],
+        'schema' => 'default',
+        'batching' => true,
+    ],
 
 ];

@@ -73,45 +73,8 @@ return [
     //  ]
     //
     'schemas' => [
-        'default' => [
-            'query' => [
-                // Task
-                'task' => \App\GraphQL\Queries\Task\TaskQuery::class,
-                'tasks' => \App\GraphQL\Queries\Task\TasksQuery::class,
-                'tasksPaginate' => \App\GraphQL\Queries\Task\TasksPaginateQuery::class,
-                // Category
-                'category' => \App\GraphQL\Queries\Category\CategoryQuery::class,
-                'categories' => \App\GraphQL\Queries\Category\CategoriesQuery::class,
-                'categoriesPaginate' =>  \App\GraphQL\Queries\Category\CategoriesPaginateQuery::class,
-            ],
-            'mutation' => [
-                // Task
-                'createTask' => \App\GraphQL\Mutations\Task\CreateTaskMutation::class,
-                'updateTask' => \App\GraphQL\Mutations\Task\UpdateTaskMutation::class,
-                'deleteBook' => \App\GraphQL\Mutations\Task\DeleteTaskMutation::class,
-                // Category
-                'createCategory' => \App\GraphQL\Mutations\Category\CreateCategoryMutation::class,
-                'updateCategory' => \App\GraphQL\Mutations\Category\UpdateCategoryMutation::class,
-                'deleteCategory' => \App\GraphQL\Mutations\Category\DeleteCategoryMutation::class,
-            ],
-            // The types only available in this schema
-            'types' => [
-                // ExampleType::class,
-                \App\GraphQL\Enums\TaskPriorityEnum::class,
-                \App\GraphQL\Enums\TaskFilterEnumType::class,
-//                "Task" => \App\GraphQL\Types\TaskType::class,
-//                "Category" => \App\GraphQL\Types\CategoryType::class,
-            ],
-
-            // Laravel HTTP middleware
-            'middleware' => null,
-
-            // Which HTTP methods to support; must be given in UPPERCASE!
-            'method' => ['GET', 'POST'],
-
-            // An array of middlewares, overrides the global ones
-            'execution_middleware' => null,
-        ],
+        'default' => \App\GraphQL\Schemas\DefaultSchema::class,
+        'auth' => \App\GraphQL\Schemas\AuthSchema::class,
     ],
 
     // The global types available to all schemas.
@@ -129,6 +92,9 @@ return [
         // \Rebing\GraphQL\Support\UploadType::class,
         "Task" => \App\GraphQL\Types\TaskType::class,
         "Category" => \App\GraphQL\Types\CategoryType::class,
+        "User" => \App\GraphQL\Types\UserType::class,
+        "Upload" => \Rebing\GraphQL\Support\UploadType::class,
+        "UserFilterInput" => \App\GraphQL\InputObject\UserFilterInput::class,
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.

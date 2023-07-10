@@ -57,6 +57,10 @@ class TaskType extends GraphQLType
             'category' => [
                 'type' => GraphQL::type('Category'),
                 'description' => 'The category of the quest'
+            ],
+            'user' => [
+                'type' => GraphQL::type('User'),
+                'description' => 'The user of the quest'
             ]
         ];
     }
